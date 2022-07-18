@@ -7,16 +7,15 @@
 radius = 9.0
 
 [node name="Ping" type="Node2D"]
-position = Vector2( 0, -2 )
 script = ExtResource( 2 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( 0, 1.19209e-07 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
-offset = Vector2( 0, -9.72223 )
+offset = Vector2( 0, 0.277768 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 0, -1 )
 shape = SubResource( 1 )
