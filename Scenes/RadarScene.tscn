@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/Radar/Linefade.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Radar/Radarline.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Rotation.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/Radar.gd" type="Script" id=5]
+[ext_resource path="res://Radar.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1, 114 )
@@ -23,7 +23,6 @@ position = Vector2( -8, -1.00791 )
 script = ExtResource( 5 )
 
 [node name="RadarSprite" type="Sprite" parent="RadarObject"]
-position = Vector2( 545, 300.357 )
 scale = Vector2( 1.17578, 1.17578 )
 texture = ExtResource( 1 )
 
@@ -47,3 +46,6 @@ offset = Vector2( 117.978, -86.2945 )
 position = Vector2( 0.0736084, -109.553 )
 rotation = -0.00283393
 shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true

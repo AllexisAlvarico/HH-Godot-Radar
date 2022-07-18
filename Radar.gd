@@ -1,6 +1,6 @@
 extends Node2D
 
-export(float) var radarRadius = 4
+export(float) var radarRadius = 240
 
 
 func _ready():
@@ -12,7 +12,7 @@ func _ready():
 		var enemy = enemyscene.instance()
 		random.randomize()
 
-		var new_pos = Vector2(random.randf_range(258,833),random.randf_range(13,587))
+		var new_pos = Vector2(random.randf_range(-256,256),random.randf_range(-256,256))
 		if new_pos.distance_to(radar.position) > radarRadius:
 			var angle = asin(float(new_pos.x / new_pos.distance_to(radar.position)))
 			new_pos.x = radarRadius * sin(angle)
