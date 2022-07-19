@@ -6,15 +6,18 @@ export(int) var planeType
 export(String) var faction
 export(String) var aircraftName
 export(int) var planeID
+export(Texture) var planeTexture
 
 
 #####################################
 #		Public Functions			#
 #####################################
-
+	
 func _ready():
-	planeType = random.randomize(0,5)
+	random.randomize()
+	planeType = random.randi_range(0,5)
 	_setData()
+	print("Aircraft: ",  aircraftName, "\nFaction: ", faction)
 
 #####################################
 #		Setter Functions			#
@@ -25,27 +28,27 @@ func _setData():
 		0: 
 			aircraftName = "F6F Hellcat";
 			faction = "allied";
-			#sprite
+			planeTexture = load("res://Sprites/Allied/f6f hellcat.png")
 		1: 
 			aircraftName = "P-38 Lightning";
 			faction = "allied";
-			#sprite
+			planeTexture = load("res://Sprites/Allied/p-38 lightning.png")
 		2: 
 			aircraftName = "B-17 Flying Fortress";
 			faction = "allied";
-			#sprite
+			planeTexture = load("res://Sprites/Allied/b-17 flying fortress.png")
 		3: 
 			aircraftName = "Messerschmit 'ME. 110'";
 			faction = "axis";
-			#sprite
+			planeTexture = load("res://Sprites/Axis/messerschmitt.png")
 		4: 
 			aircraftName = "Heinkel 'HE.111'";
 			faction = "axis";
-			#sprite
+			planeTexture = load("res://Sprites/Axis/heinkel.png")
 		5: 
 			aircraftName = "Focke-wulf 'F.W.200'";
 			faction = "axis";
-			#sprite
+			planeTexture = load("res://Sprites/Axis/fock-wulf.png")
 
 #####################################
 #		Getter Functions			#
@@ -53,13 +56,11 @@ func _setData():
 
 func _getPlaneType() -> int:
 	return planeType
-
 func _getID() -> int:
 	return planeID
-
 func _getAircraftName() -> String:
 	return aircraftName
-
 func _getFaction() -> String:
 	return faction
-
+func _getTexture() -> Texture:
+	return planeTexture
