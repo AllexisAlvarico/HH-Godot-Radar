@@ -5,7 +5,7 @@
 [node name="Gameplay" type="Node2D"]
 
 [node name="Radar" parent="." instance=ExtResource( 1 )]
-margin_left = -25.0
-margin_top = -4.0
-margin_right = -25.0
-margin_bottom = -4.0
+margin_left = 10.0
+margin_top = -1.0
+margin_right = 10.0
+margin_bottom = -1.0

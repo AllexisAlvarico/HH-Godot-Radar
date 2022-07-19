@@ -8,7 +8,6 @@ export(String) var aircraftName
 export(int) var planeID
 export(Texture) var planeTexture
 
-
 #####################################
 #		Public Functions			#
 #####################################
@@ -17,7 +16,20 @@ func _ready():
 	random.randomize()
 	planeType = random.randi_range(0,5)
 	_setData()
-	print("Aircraft: ",  aircraftName, "\nFaction: ", faction)
+	self.modulate.a = 0
+	
+func _process(delta):
+	self.modulate.a -= 0.02
+	
+#####################################
+#			Signals					#
+#####################################
+
+func _on_radarline_entered(area):
+	self.modulate.a = 1
+	
+func _on_pressed():
+	print("Plane ID: ",planeID,"\nAircraft: " , aircraftName)
 
 #####################################
 #		Setter Functions			#
@@ -50,6 +62,8 @@ func _setData():
 			faction = "axis";
 			planeTexture = load("res://Sprites/Axis/fock-wulf.png")
 
+func setID():
+	 planeID += 1
 #####################################
 #		Getter Functions			#
 #####################################
@@ -64,3 +78,5 @@ func _getFaction() -> String:
 	return faction
 func _getTexture() -> Texture:
 	return planeTexture
+
+

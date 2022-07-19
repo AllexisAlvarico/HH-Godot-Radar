@@ -40,9 +40,9 @@ scale = Vector2( 0.971251, 1.41299 )
 texture = ExtResource( 2 )
 offset = Vector2( 117.978, -86.2945 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="RadarObject/RadarSprite/Radarline"]
+[node name="Area2D" type="Area2D" parent="RadarObject/RadarSprite/Radarline"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RadarObject/RadarSprite/Radarline/KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RadarObject/RadarSprite/Radarline/Area2D"]
 position = Vector2( 0.0736084, -109.553 )
 rotation = -0.00283393
 shape = SubResource( 1 )
