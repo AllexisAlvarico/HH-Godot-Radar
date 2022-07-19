@@ -19,7 +19,7 @@ margin_bottom = 1.0
 rect_scale = Vector2( 1, 0.992152 )
 
 [node name="RadarObject" type="Node2D" parent="."]
-position = Vector2( -8, -1.00791 )
+position = Vector2( -9, -1.00791 )
 script = ExtResource( 5 )
 
 [node name="RadarSprite" type="Sprite" parent="RadarObject"]
