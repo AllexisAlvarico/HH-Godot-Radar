@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/Radar/Linefade.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Radar/Radarline.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Rotation.gd" type="Script" id=4]
-[ext_resource path="res://Radar.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Radar.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1, 114 )
