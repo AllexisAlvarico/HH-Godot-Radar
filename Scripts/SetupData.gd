@@ -1,5 +1,8 @@
 extends Node2D
 
+#####################################
+#			Variables				#
+#####################################
 
 var random = RandomNumberGenerator.new()
 export(int) var planeType

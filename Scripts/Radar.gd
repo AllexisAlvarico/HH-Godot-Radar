@@ -18,4 +18,3 @@ func _ready():
 		enemy.setID(_i)
 		add_child(enemy)
 		#print(_i, " Enemy position: ", new_pos)
-
