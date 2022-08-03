@@ -16,9 +16,9 @@ func _ready():
 
 
 func _input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventScreenDrag:
 		var movement = event.relative
-		self.rotation.x -= deg2rad(movement.y * mouse_speed)
+		self.rotation.x += deg2rad(movement.y * mouse_speed)
 		self.rotation.x = clamp(self.rotation.x,deg2rad(0),deg2rad(90))
 		rotation.y += -deg2rad(movement.x * mouse_speed)
 		PlayerData.current_rotation = self.rotation_degrees.y
