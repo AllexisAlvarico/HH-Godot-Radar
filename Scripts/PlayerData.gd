@@ -1,4 +1,5 @@
 extends Node
 
-var current_rotation
+var current_rotation : float
+
 

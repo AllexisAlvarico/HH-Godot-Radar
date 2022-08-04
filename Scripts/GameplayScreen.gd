@@ -4,13 +4,10 @@ onready var bino = $Pivot
 onready var radar = $Radar
 
 func _ready():
-	bino.visible = false
+	bino.visible = true
+	radar.visible = false
 
-func _process(delta):
-	if Input.is_action_pressed("ui_accept"):
-		bino.visible = true
-		radar.visible = false
+func _SwitchNode():
+	bino.visible = !bino.visible
+	radar.visible = !bino.visible
 
-	if Input.is_action_pressed("ui_select"):
-		bino.visible = false
-		radar.visible = true

@@ -14,14 +14,14 @@ extents = Vector2( 1, 114 )
 [node name="Radar" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
+margin_left = 6.0
 margin_top = 1.0
-margin_right = 8.0
+margin_right = 6.0
 margin_bottom = 1.0
 rect_scale = Vector2( 1, 0.992152 )
 
 [node name="RadarObject" type="Node2D" parent="."]
-position = Vector2( -9, -1.00791 )
+position = Vector2( 503, 302.586 )
 script = ExtResource( 5 )
 
 [node name="RadarSprite" type="Sprite" parent="RadarObject"]
@@ -50,10 +50,11 @@ rotation = -0.00283393
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 503, 300.357 )
 current = true
 
 [node name="PlayerView" type="Sprite" parent="."]
-position = Vector2( -7, 1.00791 )
+position = Vector2( 505, 304.602 )
 scale = Vector2( 2.58823, 1.5453 )
 texture = ExtResource( 6 )
 offset = Vector2( -1, -97.7673 )

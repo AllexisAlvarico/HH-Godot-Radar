@@ -16,4 +16,12 @@ margin_bottom = -1.0
 rect_rotation = -0.0754832
 
 [node name="Pivot" parent="." instance=ExtResource( 2 )]
-visible = false
+
+[node name="Button" type="Button" parent="."]
+margin_left = 883.0
+margin_top = 549.0
+margin_right = 977.0
+margin_bottom = 572.0
+text = "Radar"
+
+[connection signal="pressed" from="Button" to="." method="_SwitchNode"]
