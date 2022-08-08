@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/RadarScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/GameplayScreen.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/HandBook/CheatSheet.png" type="Texture" id=4]
 
 [node name="Gameplay" type="Node2D"]
 rotation = -0.000396126
@@ -17,6 +18,13 @@ rect_rotation = -0.0754832
 
 [node name="Pivot" parent="." instance=ExtResource( 2 )]
 
+[node name="HandbookButton" type="Button" parent="."]
+margin_left = 883.0
+margin_top = 519.0
+margin_right = 977.0
+margin_bottom = 542.0
+text = "Handbook"
+
 [node name="Button" type="Button" parent="."]
 margin_left = 883.0
 margin_top = 549.0
@@ -24,4 +32,10 @@ margin_right = 977.0
 margin_bottom = 572.0
 text = "Radar"
 
+[node name="CheatSheet" type="Sprite" parent="."]
+position = Vector2( 785, 260 )
+scale = Vector2( 0.55, 0.55 )
+texture = ExtResource( 4 )
+
+[connection signal="button_down" from="HandbookButton" to="." method="_on_HandbookButton_button_down"]
 [connection signal="pressed" from="Button" to="." method="_SwitchNode"]
