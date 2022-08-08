@@ -4,3 +4,6 @@
 
 [node name="f6f" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0711064, 0.0200453, 0.0140076 )
+
+[node name="Cylinder" parent="." index="0"]
+transform = Transform( 0, 4.31553, 0.0378472, -0.986659, 0, 0, 0, -0.163447, 0.999284, 0.61125, 0.0018576, 0.0964361 )
