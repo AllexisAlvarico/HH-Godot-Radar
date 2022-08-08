@@ -1,6 +1,6 @@
 extends Node2D
 
-export(float) var radarRadius = 240
+export(float) var radarRadius = 240.0
 var random = RandomNumberGenerator.new()
 var enemyscene = load("res://Prefabs/PingScene.tscn")
 onready var radar = get_node("RadarSprite")
