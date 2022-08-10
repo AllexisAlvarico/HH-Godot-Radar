@@ -26,6 +26,7 @@ func _startSpawn():
 	for _i in range(0,GameData.enemyAmount):
 		var plane = PlaneData.new()
 		plane.planeType = random.randi_range(0,5)
+		random.randomize()
 		_setData(plane)
 		var enemy = enemyscene.instance()
 		var new_pos = Vector3(random.randf_range(-200,200),random.randf_range(80,200),random.randf_range(-200,200))
