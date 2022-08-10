@@ -8,5 +8,4 @@ func _ready():
 
 
 func _process(delta):
-	#rotate_y(angle * delta)
-	pass
+	rotate_y(angle * delta)

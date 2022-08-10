@@ -1,7 +1,9 @@
 extends Node
 
 var random = RandomNumberGenerator.new()
-
+#####################################
+#			Variables				#
+#####################################
 #change the value if you want to test the scene
 var enemyAmount : int = 10
 var current_rotation : float
@@ -9,7 +11,9 @@ var enemyArray : Array
 #change this prefab to its actual plane model
 var enemyscene = load("res://Prefabs/Plane.tscn")
 
-# DATA OF THE PLANE
+#####################################
+#			Class Data				#
+#####################################
 class PlaneData:
 	var planeID : int
 	var planeType : int
@@ -18,9 +22,9 @@ class PlaneData:
 	var planeTexture : Texture
 	var planePosition : Vector3
 
-	func _getID() -> int:
-		return planeID
-
+#####################################
+#		Public Functions			#
+#####################################
 
 func _startSpawn():
 	for _i in range(0,GameData.enemyAmount):
@@ -37,9 +41,6 @@ func _startSpawn():
 		plane.planePosition = new_pos
 		plane.planeID = _i
 		GameData.enemyArray.append(plane)
-
-		#Assign position into the array
-		#print("Plane ID: ",planeID,"\nAircraft: " , aircraftName,"\nFaction: ",faction,"\nPlane position: ", new_pos)
 
 func _setData(_plane : PlaneData):
 	match _plane.planeType:

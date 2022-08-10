@@ -1,8 +1,10 @@
 extends Node2D
 
+#####################################
+#			Variables				#
+#####################################
+
 var planeData : GameData.PlaneData
-
-
 
 #####################################
 #		Public Functions			#
