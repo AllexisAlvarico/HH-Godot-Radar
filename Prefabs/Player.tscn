@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Background/binoculars.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/TestSpawner.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Spawner.gd" type="Script" id=3]
 
 [sub_resource type="TextMesh" id=1]
 

@@ -33,7 +33,6 @@ func _process(delta):
 		$Control.visible = true
 	else:
 		$Control.visible =false
-	
 	#print("Rotation: ",GameData.current_rotation)
 
 #####################################

@@ -1,19 +1,11 @@
+tool
 extends Node2D
 
-export(float) var radarRadius = 240.0
-var random = RandomNumberGenerator.new()
-var enemyscene = load("res://Prefabs/PingScene.tscn")
-onready var radar = get_node("RadarSprite")
+var pingPrefab = load("res://Prefabs/PingScene.tscn")
 
 func _ready():
 	for _i in range(0,GameData.enemyArray.size()):
-		var enemy = enemyscene.instance()
-		enemy.position = Vector2(GameData.enemyArray[_i].transform.origin.x,GameData.enemyArray[_i].transform.origin.z)
-		#var new_pos = Vector2(random.randf_range(-256,256),random.randf_range(-256,256))
-		#if new_pos.distance_to(radar.position) > radarRadius:
-		#	var angle = asin(float(new_pos.x / new_pos.distance_to(radar.position)))
-		#	new_pos.x = radarRadius * sin(angle)
-		#	new_pos.y = radarRadius * cos(angle)
-		enemy.setID(_i)
-		add_child(enemy)
-		#print(_i, " Enemy position: ", new_pos)
+		var ping = pingPrefab.instance()
+		ping.position = Vector2(GameData.enemyArray[_i].planePosition.x,GameData.enemyArray[_i].planePosition.z)
+		ping.planeData = GameData.enemyArray[_i]
+		add_child(ping)
