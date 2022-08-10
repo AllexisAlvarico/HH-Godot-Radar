@@ -6,7 +6,7 @@
 
 [sub_resource type="TextMesh" id=1]
 
-[node name="Pivot" type="Spatial"]
+[node name="Pivot2" type="Spatial"]
 
 [node name="Player" type="Spatial" parent="."]
 script = ExtResource( 1 )
