@@ -20,10 +20,12 @@ func _input(event):
 	if get_parent().visible:
 		if event is InputEventScreenDrag:
 			var movement = event.relative
-			self.rotation.x += deg2rad(movement.y * mouse_speed)
-			self.rotation.x = clamp(self.rotation.x,deg2rad(0),deg2rad(90))
+			rotation.x += deg2rad(movement.y * mouse_speed)
+			rotation.x = clamp(rotation.x,deg2rad(0),deg2rad(60))
 			rotation.y += -deg2rad(movement.x * mouse_speed)
-			PlayerData.current_rotation = self.rotation_degrees.y
+			GameData.current_rotation = fmod(rotation_degrees.y,360)
+
+
 
 
 func _process(delta):
@@ -31,7 +33,8 @@ func _process(delta):
 		$Control.visible = true
 	else:
 		$Control.visible =false
-
+	
+	#print("Rotation: ",GameData.current_rotation)
 
 #####################################
 #			Signals					#
@@ -51,7 +54,7 @@ func get_rotation() -> Vector3:
 
 
 func _fovSliderChange(value:float):
-	if $Camera.fov <= 60:
+	if $Camera.fov <= 55:
 		$Binoculars.visible = true
 	else:
 		$Binoculars.visible = false

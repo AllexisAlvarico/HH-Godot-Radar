@@ -22,7 +22,8 @@ func _ready():
 	self.modulate.a = 0
 
 func _process(delta):
-	self.modulate.a -= 0.02
+	#self.modulate.a -= 0.02
+	pass
 
 #####################################
 #			Signals					#
@@ -44,6 +45,7 @@ func _setData():
 			aircraftName = "F6F Hellcat";
 			faction = "allied";
 			planeTexture = load("res://Sprites/Allied/f6f hellcat.png")
+			#TODO add meshloder here
 		1:
 			aircraftName = "P-38 Lightning";
 			faction = "allied";

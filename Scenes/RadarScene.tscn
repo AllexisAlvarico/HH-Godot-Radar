@@ -29,33 +29,33 @@ scale = Vector2( 1.17578, 1.17578 )
 texture = ExtResource( 1 )
 
 [node name="Radarline" type="Sprite" parent="RadarObject/RadarSprite"]
-position = Vector2( 1, 0.373047 )
+position = Vector2( 0, -0.181152 )
 scale = Vector2( 0.707342, 1.10929 )
 texture = ExtResource( 3 )
 offset = Vector2( -0.0403137, -112.18 )
 script = ExtResource( 4 )
 
 [node name="Linefade" type="Sprite" parent="RadarObject/RadarSprite/Radarline"]
-position = Vector2( -0.709067, -0.160936 )
+position = Vector2( -0.479492, 0.377945 )
 rotation = -1.58528
 scale = Vector2( 0.971251, 1.41299 )
 texture = ExtResource( 2 )
 offset = Vector2( 117.978, -86.2945 )
 
 [node name="Area2D" type="Area2D" parent="RadarObject/RadarSprite/Radarline"]
+position = Vector2( 0, 1.52588e-05 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RadarObject/RadarSprite/Radarline/Area2D"]
-position = Vector2( 0.0736084, -109.553 )
+position = Vector2( -0.211365, -108.687 )
 rotation = -0.00283393
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 503, 300.357 )
+position = Vector2( 503, 302.373 )
 current = true
 
-[node name="PlayerView" type="Sprite" parent="."]
-position = Vector2( 505, 304.602 )
-scale = Vector2( 2.58823, 1.5453 )
+[node name="VisionCone1-2675240954" type="Sprite" parent="."]
+position = Vector2( 503, 302.373 )
 texture = ExtResource( 6 )
-offset = Vector2( -1, -97.7673 )
+offset = Vector2( -0.00280762, -97.8502 )
 script = ExtResource( 7 )

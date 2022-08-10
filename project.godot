@@ -16,7 +16,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-PlayerData="*res://Scripts/PlayerData.gd"
+GameData="*res://Scripts/GameData.gd"
 
 [input_devices]
 
