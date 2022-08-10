@@ -6,7 +6,6 @@ extends Spatial
 
 var mouse_speed = 0.1
 
-
 #####################################
 #		Public Functions			#
 #####################################
@@ -53,7 +52,7 @@ func get_rotation() -> Vector3:
 
 
 func _fovSliderChange(value:float):
-	if $Camera.fov <= 55:
+	if $Camera.fov <= 65:
 		$Binoculars.visible = true
 	else:
 		$Binoculars.visible = false

@@ -26,7 +26,10 @@ margin_right = 10.0
 margin_bottom = -1.0
 rect_rotation = -0.0754832
 
-[node name="Pivot" parent="." instance=ExtResource( 2 )]
+[node name="CheatSheet" type="Sprite" parent="."]
+position = Vector2( 785, 260 )
+scale = Vector2( 0.55, 0.55 )
+texture = ExtResource( 4 )
 
 [node name="HandbookButton" type="Button" parent="."]
 margin_left = 883.0
@@ -35,18 +38,5 @@ margin_right = 977.0
 margin_bottom = 542.0
 text = "Handbook"
 
-[node name="Button" type="Button" parent="."]
-margin_left = 883.0
-margin_top = 549.0
-margin_right = 977.0
-margin_bottom = 572.0
-text = "Radar"
-
-[node name="CheatSheet" type="Sprite" parent="."]
-position = Vector2( 785, 260 )
-scale = Vector2( 0.55, 0.55 )
-texture = ExtResource( 4 )
-
 [connection signal="pressed" from="Pivot/Button" to="." method="_SwitchNode"]
 [connection signal="button_down" from="HandbookButton" to="." method="_on_HandbookButton_button_down"]
-[connection signal="pressed" from="Button" to="." method="_SwitchNode"]

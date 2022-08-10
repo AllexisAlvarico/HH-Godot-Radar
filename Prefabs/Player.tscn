@@ -37,8 +37,8 @@ margin_bottom = 75.5469
 rect_rotation = 180.0
 rect_pivot_offset = Vector2( 874.109, 400.726 )
 min_value = 1.0
-max_value = 45.0
-value = 45.0
+max_value = 70.0
+value = 70.0
 
 [node name="Plane" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00161743, 0.0386709, -0.0296602 )
