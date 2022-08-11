@@ -5,12 +5,13 @@ var random = RandomNumberGenerator.new()
 #			Variables				#
 #####################################
 #change the value if you want to test the scene
-var enemyAmount : int = 10
+var enemyAmount : int = 5
 var current_rotation : float
 var enemyArray : Array
 #change this prefab to its actual plane model
 var enemyscene = load("res://Prefabs/Plane.tscn")
-
+var planeNodes
+var pingNodes
 #####################################
 #			Class Data				#
 #####################################
@@ -35,8 +36,6 @@ func _startSpawn():
 		var enemy = enemyscene.instance()
 		var new_pos = Vector3(random.randf_range(-200,200),random.randf_range(80,200),random.randf_range(-200,200))
 		enemy.transform.origin = new_pos
-		#var new_orientation = Vector3(random.randf_range(-60,60),random.randf_range(-90,90),random.randf_range(0,45))
-		#enemy.rotation_degrees = new_orientation
 		add_child(enemy)
 		plane.planePosition = new_pos
 		plane.planeID = _i

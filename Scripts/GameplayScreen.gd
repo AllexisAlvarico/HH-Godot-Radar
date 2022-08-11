@@ -5,11 +5,22 @@ onready var radar = $Radar
 onready var cheatSheet = $CheatSheet
 onready var handbookButton = $HandbookButton
 
+
+
 func _ready():
 	bino.visible = true
 	radar.visible = false
 	cheatSheet.visible = false
 	handbookButton.visible = true
+	GameData.pingNodes = get_tree().get_nodes_in_group("PingNodes")
+	GameData.planeNodes = get_tree().get_nodes_in_group("PlaneNodes")
+
+func _physics_process(delta):
+	for _i in GameData.enemyArray.size():
+		GameData.pingNodes[_i].position.x = GameData.planeNodes[_i].global_transform.origin.x
+		GameData.pingNodes[_i].position.y = GameData.planeNodes[_i].global_transform.origin.z
+
+
 
 func _SwitchNode():
 	bino.visible = !bino.visible
@@ -21,3 +32,8 @@ func _SwitchNode():
 
 func _on_HandbookButton_button_down():
 	cheatSheet.visible = !cheatSheet.visible
+
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		print("Ping Size: " ,GameData.pingNodes[0].position)
+		print("Plane Size: " ,GameData.planeNodes[0].global_transform.origin)

@@ -5,6 +5,9 @@ extends Node2D
 #####################################
 
 var planeData : GameData.PlaneData
+var index : int
+var isFound : bool = false
+
 
 #####################################
 #		Public Functions			#
@@ -13,8 +16,11 @@ var planeData : GameData.PlaneData
 func _ready():
 	self.modulate.a = 0
 
+
 func _process(delta):
 	self.modulate.a -= 0.02
+
+
 
 #####################################
 #			Signals					#
@@ -25,7 +31,7 @@ func _on_radarline_entered(area):
 
 func _on_pressed():
 	#add quiz scene here
-	get_tree().change_scene("res://Scenes/QuizScene.tscn")
+	#get_tree().change_scene("res://Scenes/QuizScene.tscn")
 	print("Plane ID: ", planeData.planeID,"\nAircraft: " , planeData.aircraftName)
 
 

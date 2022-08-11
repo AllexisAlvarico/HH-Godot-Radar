@@ -12,10 +12,10 @@ script = ExtResource( 3 )
 [node name="Pivot" parent="." instance=ExtResource( 2 )]
 
 [node name="Button" type="Button" parent="Pivot"]
-margin_left = 883.217
-margin_top = 548.65
-margin_right = 977.217
-margin_bottom = 571.65
+margin_left = 878.0
+margin_top = 549.0
+margin_right = 972.0
+margin_bottom = 572.0
 text = "Radar"
 
 [node name="Radar" parent="." instance=ExtResource( 1 )]

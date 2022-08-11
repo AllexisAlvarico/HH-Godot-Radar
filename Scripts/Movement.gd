@@ -1,7 +1,7 @@
 extends Spatial
 var random = RandomNumberGenerator.new()
 var velocity : Vector3
-var speed := 10.0
+var speed : float = 10.0
 onready var plane = get_child(0)
 
 func _ready():
