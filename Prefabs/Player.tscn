@@ -73,4 +73,6 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[connection signal="drag_ended" from="Player/Control/VSlider" to="Player" method="_on_VSlider_drag_ended"]
+[connection signal="drag_started" from="Player/Control/VSlider" to="Player" method="_on_VSlider_drag_started"]
 [connection signal="value_changed" from="Player/Control/VSlider" to="Player" method="_fovSliderChange"]

@@ -5,6 +5,7 @@ extends Spatial
 #####################################
 
 var mouse_speed = 0.1
+var is_zooming = false
 
 #####################################
 #		Public Functions			#
@@ -16,7 +17,7 @@ func _ready():
 
 
 func _input(event):
-	if get_parent().visible:
+	if get_parent().visible && !is_zooming:
 		if event is InputEventScreenDrag:
 			var movement = event.relative
 			rotation.x += deg2rad(movement.y * mouse_speed)
@@ -52,8 +53,17 @@ func get_rotation() -> Vector3:
 
 
 func _fovSliderChange(value:float):
+	
 	if $Camera.fov <= 65:
 		$Binoculars.visible = true
 	else:
 		$Binoculars.visible = false
 	$Camera.fov = value
+
+
+func _on_VSlider_drag_started():
+	is_zooming = true
+
+
+func _on_VSlider_drag_ended(value_changed:bool):
+	is_zooming = false
