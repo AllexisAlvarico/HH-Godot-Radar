@@ -8,7 +8,6 @@ var planeData : GameData.PlaneData
 var index : int
 var isFound : bool = false
 
-
 #####################################
 #		Public Functions			#
 #####################################
@@ -16,11 +15,8 @@ var isFound : bool = false
 func _ready():
 	self.modulate.a = 0
 
-
 func _process(delta):
 	self.modulate.a -= 0.02
-
-
 
 #####################################
 #			Signals					#

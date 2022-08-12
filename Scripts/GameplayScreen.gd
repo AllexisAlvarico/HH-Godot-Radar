@@ -5,8 +5,6 @@ onready var radar = $Radar
 onready var cheatSheet = $CheatSheet
 onready var handbookButton = $HandbookButton
 
-
-
 func _ready():
 	bino.visible = true
 	radar.visible = false
@@ -19,8 +17,6 @@ func _physics_process(delta):
 	for _i in GameData.enemyArray.size():
 		GameData.pingNodes[_i].position.x = GameData.planeNodes[_i].global_transform.origin.x
 		GameData.pingNodes[_i].position.y = GameData.planeNodes[_i].global_transform.origin.z
-
-
 
 func _SwitchNode():
 	bino.visible = !bino.visible

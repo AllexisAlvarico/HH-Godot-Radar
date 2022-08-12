@@ -32,10 +32,10 @@ scale = Vector2( 0.55, 0.55 )
 texture = ExtResource( 4 )
 
 [node name="HandbookButton" type="Button" parent="."]
-margin_left = 883.0
-margin_top = 519.0
-margin_right = 977.0
-margin_bottom = 542.0
+margin_left = 877.794
+margin_top = 520.348
+margin_right = 971.794
+margin_bottom = 543.348
 text = "Handbook"
 
 [connection signal="pressed" from="Pivot/Button" to="." method="_SwitchNode"]
