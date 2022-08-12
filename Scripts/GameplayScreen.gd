@@ -28,8 +28,3 @@ func _SwitchNode():
 
 func _on_HandbookButton_button_down():
 	cheatSheet.visible = !cheatSheet.visible
-
-func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		print("Ping Size: " ,GameData.pingNodes[0].position)
-		print("Plane Size: " ,GameData.planeNodes[0].global_transform.origin)

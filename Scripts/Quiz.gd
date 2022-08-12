@@ -1,8 +1,5 @@
 extends Control
 
-var planeName : String
-var planeFaction : String
-var planeTexture : Texture
-
-func _ready():
-    pass
+func setData(data : GameData.PlaneData):
+	$ImageCenterContainer/PlaneSprite.texture = data.planeTexture
+	$ImageCenterContainer/PlaneSprite/AircraftName.text = data.aircraftName

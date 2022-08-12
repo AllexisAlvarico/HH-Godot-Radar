@@ -12,6 +12,7 @@ var enemyArray : Array
 var enemyscene = load("res://Prefabs/Plane.tscn")
 var planeNodes
 var pingNodes
+
 #####################################
 #			Class Data				#
 #####################################
