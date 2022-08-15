@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sprites/Radar/Radar.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Radar/Linefade.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Radar/Radarline.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Rotation.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/Radar.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/PingSpawner.gd" type="Script" id=5]
 [ext_resource path="res://Sprites/Player/vision_cone1-2675240954.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/PlayerCone.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/QuizScene.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1, 114 )
@@ -22,7 +23,6 @@ rect_scale = Vector2( 1, 0.992152 )
 
 [node name="RadarObject" type="Node2D" parent="."]
 position = Vector2( 503, 302.586 )
-script = ExtResource( 5 )
 
 [node name="RadarSprite" type="Sprite" parent="RadarObject"]
 scale = Vector2( 1.17578, 1.17578 )
@@ -50,12 +50,19 @@ position = Vector2( -0.211365, -108.687 )
 rotation = -0.00283393
 shape = SubResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 503, 302.373 )
-current = true
-
-[node name="VisionCone1-2675240954" type="Sprite" parent="."]
+[node name="PlayerCone" type="Sprite" parent="."]
 position = Vector2( 503, 302.373 )
 texture = ExtResource( 6 )
 offset = Vector2( -0.00280762, -97.8502 )
 script = ExtResource( 7 )
+
+[node name="Pings" type="Node2D" parent="."]
+position = Vector2( 504, 302.373 )
+script = ExtResource( 5 )
+
+[node name="Quiz" parent="." instance=ExtResource( 8 )]
+visible = false
+anchor_left = 0.0507813
+anchor_top = -0.0571281
+anchor_right = 1.05078
+anchor_bottom = 0.942872

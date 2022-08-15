@@ -37,5 +37,14 @@ margin_right = 971.794
 margin_bottom = 543.348
 text = "Handbook"
 
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 2.8, 2.47968 )
+
+[node name="Score" type="Label" parent="Control"]
+margin_right = 40.0
+margin_bottom = 14.0
+
 [connection signal="pressed" from="Pivot/Button" to="." method="_SwitchNode"]
 [connection signal="button_down" from="HandbookButton" to="." method="_on_HandbookButton_button_down"]

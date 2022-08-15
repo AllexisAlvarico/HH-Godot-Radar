@@ -28,13 +28,9 @@ func _process(delta):
 func _on_radarline_entered(area):
 	self.modulate.a = 1
 
-func _on_pressed():
-	var quizInstance = quizPrefab.instance()
-	print(planeData.planeTexture.get_data())
-	quizInstance.setData(planeData)
-	add_child(quizInstance)
-
-
+func _on_TextureButton_pressed():
+	isFound = true
+	#print("ID: ", planeData.planeID)
 
 #####################################
 #		Getter Functions			#
@@ -48,4 +44,8 @@ func getPlaneFaction() -> String:
 
 func getPlaneTexture() -> Texture:
 	return planeData.planeTexture
+
+func getOnPressed() -> bool:
+	return isFound
+
 

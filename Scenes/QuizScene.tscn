@@ -6,50 +6,21 @@
 [node name="Quiz" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -544.0
-margin_top = -381.0
-margin_right = -544.0
-margin_bottom = -381.0
+margin_left = 3.0
+margin_top = -1.0
+margin_right = 3.0
+margin_bottom = -1.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
-
-[node name="ButtonCenterContainer" type="CenterContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -55.0
-margin_top = -42.0
-margin_right = 124.0
-margin_bottom = -2.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ButtonCenterContainer"]
-margin_left = 27.0
-margin_top = 10.0
-margin_right = 152.0
-margin_bottom = 30.0
-rect_pivot_offset = Vector2( -321, -184 )
-
-[node name="FriendlyButton" type="Button" parent="ButtonCenterContainer/HBoxContainer"]
-margin_right = 63.0
-margin_bottom = 20.0
-rect_pivot_offset = Vector2( -446, -258 )
-text = "Friendly"
-
-[node name="EnemyButton" type="Button" parent="ButtonCenterContainer/HBoxContainer"]
-margin_left = 67.0
-margin_right = 125.0
-margin_bottom = 20.0
-text = "Hostile"
 
 [node name="ImageCenterContainer" type="CenterContainer" parent="."]
 margin_right = 1023.0
 margin_bottom = 605.0
 
 [node name="PlaneSprite" type="Sprite" parent="ImageCenterContainer"]
-position = Vector2( 548, 341 )
+position = Vector2( 477, 298 )
 texture = ExtResource( 1 )
 
 [node name="AircraftName" type="Label" parent="ImageCenterContainer/PlaneSprite"]
@@ -60,3 +31,25 @@ margin_bottom = 198.0
 text = "TEST MF"
 align = 1
 valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 412.0
+margin_top = 559.0
+margin_right = 537.0
+margin_bottom = 579.0
+rect_pivot_offset = Vector2( -321, -184 )
+
+[node name="FriendlyButton" type="Button" parent="HBoxContainer"]
+margin_right = 63.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( -446, -258 )
+text = "Friendly"
+
+[node name="EnemyButton" type="Button" parent="HBoxContainer"]
+margin_left = 67.0
+margin_right = 125.0
+margin_bottom = 20.0
+text = "Hostile"
+
+[connection signal="pressed" from="HBoxContainer/FriendlyButton" to="." method="_on_FriendlyButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/EnemyButton" to="." method="_on_EnemyButton_pressed"]

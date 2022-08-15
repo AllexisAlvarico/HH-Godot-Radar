@@ -5,14 +5,14 @@
 
 [sub_resource type="CubeMesh" id=1]
 
-[node name="Pivot" type="Spatial"]
+[node name="Pivot" type="Spatial" groups=["PlaneNodes"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.234138, 0, -0.00416374 )
 script = ExtResource( 2 )
 
 [node name="KinematicBody" type="KinematicBody" parent="."]
 
-[node name="f6f" parent="KinematicBody" groups=["PlaneNodes"] instance=ExtResource( 1 )]
-transform = Transform( -0.999467, 0.000436335, 0.0326605, 0.000439676, 1, 9.46787e-05, -0.0326604, 0.000109036, -0.999467, -0.289804, -0.0915779, 21.5399 )
+[node name="f6f" parent="KinematicBody" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.289804, -0.0915779, -0.4601 )
 
 [node name="Mesh" type="MeshInstance" parent="KinematicBody/f6f"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 1 )
