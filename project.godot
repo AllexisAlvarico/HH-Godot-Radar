@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Hh- Godot- Radar"
-run/main_scene="res://Scenes/GameplayScreen.tscn"
+run/main_scene="res://Scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]

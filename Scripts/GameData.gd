@@ -5,7 +5,7 @@ var random = RandomNumberGenerator.new()
 #			Variables				#
 #####################################
 #change the value if you want to test the scene
-var enemyAmount : int = 5
+var enemyAmount : int
 var current_rotation : float
 var enemyArray : Array
 #change this prefab to its actual plane model

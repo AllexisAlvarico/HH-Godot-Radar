@@ -11,12 +11,24 @@ script = ExtResource( 3 )
 
 [node name="Pivot" parent="." instance=ExtResource( 2 )]
 
-[node name="Button" type="Button" parent="Pivot"]
+[node name="RadarButton" type="Button" parent="Pivot"]
 margin_left = 878.0
 margin_top = 549.0
 margin_right = 972.0
 margin_bottom = 572.0
 text = "Radar"
+
+[node name="HandbookButton" type="Button" parent="Pivot"]
+margin_left = 878.0
+margin_top = 520.0
+margin_right = 972.0
+margin_bottom = 543.0
+text = "Handbook"
+
+[node name="CheatSheet" type="Sprite" parent="Pivot/HandbookButton"]
+position = Vector2( -92.794, -260.348 )
+scale = Vector2( 0.55, 0.55 )
+texture = ExtResource( 4 )
 
 [node name="Radar" parent="." instance=ExtResource( 1 )]
 margin_left = 10.0
@@ -24,18 +36,6 @@ margin_top = -1.0
 margin_right = 10.0
 margin_bottom = -1.0
 rect_rotation = -0.0754832
-
-[node name="CheatSheet" type="Sprite" parent="."]
-position = Vector2( 785, 260 )
-scale = Vector2( 0.55, 0.55 )
-texture = ExtResource( 4 )
-
-[node name="HandbookButton" type="Button" parent="."]
-margin_left = 877.794
-margin_top = 520.348
-margin_right = 971.794
-margin_bottom = 543.348
-text = "Handbook"
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
@@ -46,5 +46,5 @@ rect_scale = Vector2( 2.8, 2.47968 )
 margin_right = 40.0
 margin_bottom = 14.0
 
-[connection signal="pressed" from="Pivot/Button" to="." method="_SwitchNode"]
-[connection signal="button_down" from="HandbookButton" to="." method="_on_HandbookButton_button_down"]
+[connection signal="pressed" from="Pivot/RadarButton" to="." method="_SwitchNode"]
+[connection signal="button_down" from="Pivot/HandbookButton" to="." method="_on_HandbookButton_button_down"]

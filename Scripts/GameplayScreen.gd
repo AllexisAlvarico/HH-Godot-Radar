@@ -2,8 +2,8 @@ extends Node2D
 
 onready var bino = $Pivot
 onready var radar = $Radar
-onready var cheatSheet = $CheatSheet
-onready var handbookButton = $HandbookButton
+onready var cheatSheet = $Pivot/HandbookButton/CheatSheet
+onready var handbookButton = $Pivot/HandbookButton
 
 func _ready():
 	bino.visible = true
