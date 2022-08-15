@@ -4,7 +4,11 @@ extends Spatial
 #			Variables				#
 #####################################
 
-var mouse_speed = 0.1
+var mouse_speed = 0.01
+var is_zooming = false
+var movement := Vector2()
+var movementWeight := 0.2
+onready var slider = $Control/VSlider
 
 #####################################
 #		Public Functions			#
@@ -12,22 +16,33 @@ var mouse_speed = 0.1
 
 func _ready():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	slider.value = $Camera.fov
 	pass
 
 
 func _input(event):
-	if get_parent().visible:
+	if get_parent().visible && !is_zooming:
 		if event is InputEventScreenDrag:
-			var movement = event.relative
-			rotation.x += deg2rad(movement.y * mouse_speed)
-			rotation.x = clamp(rotation.x,deg2rad(0),deg2rad(60))
-			rotation.y += -deg2rad(movement.x * mouse_speed)
-			GameData.current_rotation = fmod(rotation_degrees.y,360)
+			
+			movement = event.relative * mouse_speed
+			movement.x += rotation.y
+			movement.y += rotation.x
 
 
 
 
-func _process(delta):
+func _process(_delta):
+	rotation.x = lerp(rotation.x, movement.y, movementWeight)
+	rotation.y = lerp(rotation.y, movement.x, movementWeight)
+	rotation.x = clamp(rotation.x,deg2rad(0), deg2rad(60))
+	GameData.current_rotation = fmod(rotation_degrees.y, 360)
+
+	$Camera.fov = lerp($Camera.fov, slider.value, 0.2)
+	if $Camera.fov <= 65:
+		$Binoculars.visible = true
+	else:
+		$Binoculars.visible = false
+	# rotation.y += -deg2rad(movement.x * mouse_speed)
 	if get_parent().visible:
 		$Control.visible = true
 	else:
@@ -52,8 +67,13 @@ func get_rotation() -> Vector3:
 
 
 func _fovSliderChange(value:float):
-	if $Camera.fov <= 65:
-		$Binoculars.visible = true
-	else:
-		$Binoculars.visible = false
-	$Camera.fov = value
+	# $Camera.fov = value
+	pass
+
+
+func _on_VSlider_drag_started():
+	is_zooming = true
+
+
+func _on_VSlider_drag_ended(value_changed:bool):
+	is_zooming = false
