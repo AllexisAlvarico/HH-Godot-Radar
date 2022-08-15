@@ -10,6 +10,16 @@ func _ready():
 	radar.visible = false
 	cheatSheet.visible = false
 	handbookButton.visible = true
+	GameData.pingNodes = get_tree().get_nodes_in_group("PingNodes")
+	GameData.planeNodes = get_tree().get_nodes_in_group("PlaneNodes")
+
+func _process(delta):
+	$Control/Score.text = "Score: " + str(GameData.score)
+
+func _physics_process(delta):
+	for _i in GameData.enemyArray.size():
+		GameData.pingNodes[_i].position.x = GameData.planeNodes[_i].get_child(0).get_child(0).global_transform.origin.x
+		GameData.pingNodes[_i].position.y = GameData.planeNodes[_i].get_child(0).get_child(0).global_transform.origin.z
 
 func _SwitchNode():
 	bino.visible = !bino.visible
