@@ -10,8 +10,10 @@ var current_rotation : float
 var enemyArray : Array
 #change this prefab to its actual plane model
 var enemyscene = load("res://Prefabs/Plane.tscn")
-var planeNodes
-var pingNodes
+var planeNodes : Array
+var pingNodes : Array
+var score : int = 0
+
 #####################################
 #			Class Data				#
 #####################################
@@ -28,7 +30,7 @@ class PlaneData:
 #####################################
 
 func _startSpawn():
-	for _i in range(0,GameData.enemyAmount):
+	for _i in range(0,enemyAmount):
 		var plane = PlaneData.new()
 		plane.planeType = random.randi_range(0,5)
 		random.randomize()
@@ -39,7 +41,7 @@ func _startSpawn():
 		add_child(enemy)
 		plane.planePosition = new_pos
 		plane.planeID = _i
-		GameData.enemyArray.append(plane)
+		enemyArray.append(plane)
 
 func _setData(_plane : PlaneData):
 	match _plane.planeType:

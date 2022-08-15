@@ -7,6 +7,9 @@ extends Node2D
 var planeData : GameData.PlaneData
 var index : int
 var isFound : bool = false
+onready var quizPrefab = preload("res://Scenes/QuizScene.tscn")
+
+onready var button = $Area2D/Sprite/TextureButton
 
 #####################################
 #		Public Functions			#
@@ -16,7 +19,7 @@ func _ready():
 	self.modulate.a = 0
 
 func _process(delta):
-	self.modulate.a -= 0.0
+	self.modulate.a -= 0.005
 
 #####################################
 #			Signals					#
@@ -25,11 +28,9 @@ func _process(delta):
 func _on_radarline_entered(area):
 	self.modulate.a = 1
 
-func _on_pressed():
-	#add quiz scene here
-	#get_tree().change_scene("res://Scenes/QuizScene.tscn")
-	print("Plane ID: ", planeData.planeID,"\nAircraft: " , planeData.aircraftName)
-
+func _on_TextureButton_pressed():
+	isFound = true
+	#print("ID: ", planeData.planeID)
 
 #####################################
 #		Getter Functions			#
@@ -43,4 +44,8 @@ func getPlaneFaction() -> String:
 
 func getPlaneTexture() -> Texture:
 	return planeData.planeTexture
+
+func getOnPressed() -> bool:
+	return isFound
+
 

@@ -8,3 +8,7 @@ func _ready():
 		pingInstance.position = Vector2(GameData.enemyArray[_i].planePosition.x,GameData.enemyArray[_i].planePosition.z)
 		pingInstance.planeData = GameData.enemyArray[_i]
 		add_child(pingInstance)
+
+
+
+

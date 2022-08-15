@@ -28,4 +28,4 @@ margin_bottom = 90.0
 texture_normal = ExtResource( 1 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_radarline_entered"]
-[connection signal="pressed" from="Area2D/Sprite/TextureButton" to="." method="_on_pressed"]
+[connection signal="pressed" from="Area2D/Sprite/TextureButton" to="." method="_on_TextureButton_pressed"]
