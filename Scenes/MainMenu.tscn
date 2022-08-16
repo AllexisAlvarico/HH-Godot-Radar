@@ -71,12 +71,22 @@ margin_right = 68.0
 margin_bottom = 89.0
 text = "Hard"
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 margin_left = 448.0
 margin_top = 186.0
 margin_right = 576.0
 margin_bottom = 207.0
 text = "Radar Operator"
+align = 1
+valign = 1
+
+[node name="Difficulty" type="Label" parent="."]
+visible = false
+margin_left = 448.0
+margin_top = 216.0
+margin_right = 576.0
+margin_bottom = 237.0
+text = "Difficulty"
 align = 1
 valign = 1
 

@@ -51,8 +51,8 @@ rotation = -0.00283393
 shape = SubResource( 1 )
 
 [node name="PlayerCone" type="Sprite" parent="."]
-position = Vector2( 503, 302.373 )
-scale = Vector2( 6.16632, 1.52411 )
+position = Vector2( 504, 302.373 )
+scale = Vector2( 3.57313, 0.874797 )
 texture = ExtResource( 6 )
 offset = Vector2( -0.00280762, -97.8502 )
 script = ExtResource( 7 )

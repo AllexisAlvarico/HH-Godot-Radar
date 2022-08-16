@@ -1,10 +1,10 @@
 extends Control
 
 
-
 func _on_PlayButton_pressed():
 	$CenterContainer.visible = false;
 	$DifficultyContainer.visible = true
+	$Difficulty.visible = true
 
 func _on_TutorialButton_pressed():
 	pass # TODO create a help screen

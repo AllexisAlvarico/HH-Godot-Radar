@@ -15,6 +15,9 @@ func _ready():
 
 func _process(delta):
 	$Control/Score.text = "Score: " + str(GameData.score)
+	if GameData.planeNodes.size() == 0 || GameData.pingNodes.size() == 0:
+		get_tree().root.get_node("Gameplay").queue_free()
+		get_tree().change_scene("res://Scenes/EndScene.tscn")
 
 func _physics_process(delta):
 	for _i in GameData.enemyArray.size():
@@ -31,3 +34,4 @@ func _SwitchNode():
 
 func _on_HandbookButton_button_down():
 	cheatSheet.visible = !cheatSheet.visible
+

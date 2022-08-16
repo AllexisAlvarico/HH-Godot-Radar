@@ -5,7 +5,7 @@ var random = RandomNumberGenerator.new()
 #			Variables				#
 #####################################
 #change the value if you want to test the scene
-var enemyAmount : int
+var enemyAmount : float
 var current_rotation : float
 var enemyArray : Array
 #change this prefab to its actual plane model
@@ -13,6 +13,7 @@ var enemyscene = load("res://Prefabs/Plane.tscn")
 var planeNodes : Array
 var pingNodes : Array
 var score : int = 0
+var gameEnd : bool
 
 #####################################
 #			Class Data				#
